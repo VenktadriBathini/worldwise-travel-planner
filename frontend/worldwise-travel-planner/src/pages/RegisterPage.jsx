@@ -43,6 +43,7 @@
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { register as apiRegister } from "../api/auth";
+import beach from "../assets/beach.jpg"; // Import background image
 
 export default function RegisterPage() {
   const [loading, setLoading] = useState(false);
@@ -106,7 +107,7 @@ export default function RegisterPage() {
         password: payload.password,
         display_name: `${payload.firstName} ${payload.lastName}`.trim(),
       });
-      nav("/dashboard"); // or "/login" if you want to send them to sign in
+      nav("/login"); // Redirect to login after successful registration
     } catch (e) {
       // prefer normalized error from axiosClient; fall back to response
       const norm = e?.normalized;
@@ -132,12 +133,12 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-slate-950 px-6 py-10 sm:px-8">
-      {/* animated gradient halos */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute left-[-10%] top-[10%] h-72 w-72 rounded-full bg-fuchsia-500/20 blur-3xl animate-pulse" />
-        <div className="absolute right-[-10%] bottom-[15%] h-96 w-96 rounded-full bg-indigo-500/20 blur-3xl animate-[pulse_3s_ease-in-out_infinite]" />
-      </div>
+    <div
+      className="relative min-h-screen flex items-center justify-center px-6 py-10 sm:px-8 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${beach})` }}
+    >
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px] -z-10"></div>
 
       <div className="mx-auto w-full max-w-3xl">
         {/* card with animated gradient border */}

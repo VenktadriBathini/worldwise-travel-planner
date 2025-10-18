@@ -8,6 +8,7 @@ import Features from "./components/Features";
 import AboutUs from "./pages/AboutUs";
 import PlaceDetails from "./trip/PlaceDetails";
 import Dashboard from "./pages/Dashboard";
+import PlanTripPage from "./pages/PlanTripPage"; // Import the new component
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
@@ -18,18 +19,47 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<RegisterPage />} />
-        <Route path="/features" element={<Features />} />
+        <Route
+          path="/features"
+          element={
+            <ProtectedRoute>
+              <Features />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/about" element={<AboutUs />}>
           <Route path="placeDetails" element={<PlaceDetails />} />
         </Route>
-        <Route path="/addTrip" element={<Features />} />
-        <Route path="/publishTrip" element={<Features />} />
+        <Route
+          path="/addTrip"
+          element={
+            <ProtectedRoute>
+              <Features />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/publishTrip"
+          element={
+            <ProtectedRoute>
+              <Features />
+            </ProtectedRoute>
+          }
+        />
         {/* <Route path="/about/PlaceDetails" element={<PlaceDetails />} /> */}
         <Route
           path="/dashboard"
           element={
             <ProtectedRoute>
               <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard/plan-trip"
+          element={
+            <ProtectedRoute>
+              <PlanTripPage />
             </ProtectedRoute>
           }
         />
