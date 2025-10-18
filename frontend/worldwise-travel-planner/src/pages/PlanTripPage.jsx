@@ -10,6 +10,7 @@ import {
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import axios from "axios";
+import TripChecklist from "../components/TripChecklist"; // Import the new component
 const osrmAxios = axios.create(); // Create a new axios instance for OSRM requests
 
 // Fix for default icon issue with Leaflet and Webpack
@@ -388,6 +389,11 @@ export default function PlanTripPage() {
             Save Trip
           </button>
         </form>
+
+        {/* Trip Checklist Section */}
+        <div className="mt-8 border-t pt-4">
+          <TripChecklist />
+        </div>
       </div>
 
       {/* Map Section */}
