@@ -1,0 +1,79 @@
+# --- Node / Express basics ---
+node_modules/
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime data / PIDs
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage / testing
+coverage/
+.nyc_output/
+jest-coverage/
+jest-cache/
+
+# Build / output
+dist/
+build/
+.tmp/
+.temp/
+.cache/
+.parcel-cache/
+
+# TypeScript (remove if not using TS)
+*.tsbuildinfo
+
+# Environment & secrets (keep an example file tracked)
+.env
+.env.*
+!.env.example
+
+# Local databases / data dumps
+data/
+*.sqlite
+*.sqlite3
+*.db
+
+# Uploads / temp files created at runtime
+uploads/*
+!uploads/.gitkeep
+tmp/
+temp/
+
+# Tooling caches
+.eslintcache
+.stylelintcache
+.cache-loader/
+
+# PM2
+.pids/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editors / IDEs
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Optional: Prisma local dev DBs
+prisma/dev.db
+
+# Docker (optional)
+docker-data/
