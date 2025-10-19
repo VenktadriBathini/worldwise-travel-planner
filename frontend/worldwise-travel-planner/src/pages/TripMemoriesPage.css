@@ -2,6 +2,33 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-image: url('../assets/nature-landscape.jpg'); /* Add background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.trip-memories-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  backdrop-filter: blur(2px); /* Blur effect */
+  -webkit-backdrop-filter: blur(2px); /* Safari support */
+  z-index: -1; /* Ensure it's behind content */
+}
+
+.trip-memories-content {
+  position: relative; /* Ensure content is above the overlay */
+  z-index: 1;
+  color: white; /* Adjust text color for readability */
+}
+
+.trip-memories-content h1 {
+  color: white; /* Adjust heading color for readability */
 }
 
 .trip-memories-content {
@@ -13,7 +40,7 @@
 }
 
 .trip-memories-content h1 {
-  color: #333;
+  color: white; /* Adjust heading color for readability */
   margin-bottom: 1.5rem;
 }
 
@@ -32,7 +59,7 @@
 }
 
 .memory-upload-section h2 {
-  color: #555;
+  color: #333; /* Keep dark for contrast on light background */
   margin-bottom: 1rem;
 }
 
@@ -76,6 +103,6 @@
 }
 
 .memory-list h2 {
-  color: #555;
+  color: white; /* Adjust heading color for readability */
   margin-bottom: 1rem;
 }
