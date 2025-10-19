@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
@@ -8,7 +8,11 @@ import Features from "./components/Features";
 import AboutUs from "./pages/AboutUs";
 import PlaceDetails from "./trip/PlaceDetails";
 import Dashboard from "./pages/Dashboard";
-import PlanTripPage from "./pages/PlanTripPage"; // Import the new component
+import PlanTripPage from "./pages/PlanTripPage";
+import UpcomingTripsPage from "./pages/UpcomingTripsPage";
+import YourTripsPage from "./pages/YourTripsPage";
+import ShareTripPage from "./pages/ShareTripPage";
+import TripMemoriesPage from "./pages/TripMemoriesPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
@@ -54,15 +58,14 @@ function App() {
               <Dashboard />
             </ProtectedRoute>
           }
-        />
-        <Route
-          path="/dashboard/plan-trip"
-          element={
-            <ProtectedRoute>
-              <PlanTripPage />
-            </ProtectedRoute>
-          }
-        />
+        >
+          <Route path="plan-trip" element={<PlanTripPage />} />
+          <Route path="upcoming-trips" element={<UpcomingTripsPage />} />
+          <Route path="your-trips" element={<YourTripsPage />} />
+          <Route path="share-trip/:tripId" element={<ShareTripPage />} />
+          <Route path="trip-memories/:tripId" element={<TripMemoriesPage />} />
+          <Route index element={<p className="text-gray-600">Select an option from the sidebar to get started.</p>} />
+        </Route>
       </Routes>
       <Footer />
     </>
