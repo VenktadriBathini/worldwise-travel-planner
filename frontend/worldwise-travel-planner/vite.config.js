@@ -9,8 +9,6 @@ export default defineConfig({
     include: ['react', 'react-dom'],
   },
   build: {
-    rollupOptions: {
-      external: ['react', 'react-dom'],
-    },
+    // Removed rollupOptions.external to ensure React and React-DOM are bundled
   },
 });
